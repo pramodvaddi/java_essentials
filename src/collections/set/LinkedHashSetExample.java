@@ -1,12 +1,10 @@
 package collections.set;
-
 /*
 Key Points:
-Implements NavigableSet, backed by a TreeMap
-Stores only unique elements
-Automatically sorts elements in natural order (ascending)
-Slower than HashSet, but sorted
-
+Inherits from HashSet
+Maintains insertion order
+No duplicate elements
+Internally backed by a LinkedHashMap
 
 | Feature                | HashSet   | LinkedHashSet | TreeSet       |
 | ---------------------- | --------- | ------------- | ------------- |
@@ -17,20 +15,25 @@ Slower than HashSet, but sorted
 | Internal structure     | HashMap   | LinkedHashMap | TreeMap       |
 
 
+
+
  */
 
-import java.util.TreeSet;
+import java.util.LinkedHashSet;
 
-public class TreeSetExample {
+public class LinkedHashSetExample {
 
     public static void main(String[] args) {
-        TreeSet<Integer> scores = new TreeSet<>();
-        scores.add(234);
-        scores.add(240);
-        scores.add(290);
-        scores.add(320);
+        LinkedHashSet<String> visitors = new LinkedHashSet<>();
+        visitors.add("John");
+        visitors.add("Mike");
+        visitors.add("Nanny");
+        visitors.add("John");
 
-        System.out.println(scores);
+        System.out.println(visitors);
+
+
+
 
     }
 }
