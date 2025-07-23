@@ -1,9 +1,9 @@
 package collections.map;
 
 /*
-TreeMap – Sorted by Keys
-✅ Stores entries in a red-black tree
-✅ Sorted by natural order of keys or using Comparator
+IdentityHashMap – Based on Reference Equality
+✅ Uses == instead of equals() to compare keys
+✅ Rare but used in frameworks like JVM's ClassLoader or memory-sensitive tasks
 
 | Feature             | HashMap | LinkedHashMap | TreeMap       | IdentityHashMap      |
 | ------------------- | ------- | ------------- | ------------- | -------------------- |
@@ -15,19 +15,20 @@ TreeMap – Sorted by Keys
 
  */
 
-
+import java.util.IdentityHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
-public class TreeMapExample {
-
+public class IdentityHashMapExample {
     public static void main(String[] args) {
-        Map<String, Integer> worldCup = new TreeMap<>();
-        worldCup.put("Australia", 2003);
-        worldCup.put("England", 2007);
-        worldCup.put("India", 2011);
 
-        System.out.println(worldCup);
+        Map<String, String> identityMap = new IdentityHashMap<>();
+        String a = new String("Java");
+        String b = new String("Java");
 
+        identityMap.put(a, "Lang1");
+        identityMap.put(b, "Lang2");
+
+        System.out.println(identityMap.size());
+        System.out.println(identityMap);
     }
 }
